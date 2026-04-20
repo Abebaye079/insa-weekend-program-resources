@@ -1,0 +1,14 @@
+Challenge 1: 
+Hint: “Sometimes secrets travel unencrypted. Inspect the messages your browser asks for.”
+
+Challenge 2:
+Hint: “Even small questions can carry hidden messages. Check what your system is asking the internet.”
+
+Challenge 3:
+Hint: “The answer might be broken into pieces across multiple packets. Reassemble to see the whole picture.”
+
+Challenge 4:
+Hint: “Some messages arrive encoded. The transport might reveal patterns in the body rather than the headers.”
+
+Challenge 5:
+Hint: “Even simple pings can carry secrets inside them. Don’t just look at the summary—peek at the payload.”

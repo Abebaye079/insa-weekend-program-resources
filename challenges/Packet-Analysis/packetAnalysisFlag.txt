@@ -1,0 +1,62 @@
+challenge 1: FLAG{http_easy_capture}
+
+step 1. filter http
+step 2. follow one of xml/text files
+step 3. open it using http/tcp stream
+
+
+challenge 2 : FLAG{dns_exfiltration}
+
+step 1.open the file
+
+step 2 check protocols
+	- Go to statistics then protocol hirarchy 
+	- saw TCP (High), DNS (Low)
+
+step 3.move to DNS
+	- filter dns
+step 4.read Query name in packet details
+	- Domain Name System -> Query -> Name
+	-found : FLAG_dns_exfiltration_.example.com  in every packect
+ 
+step 5.understand the hint
+	- Look at DNS Queries
+	- data is hidden in domain names
+
+step 6.REcognize the technique
+	- DNS exfiltration is used
+	- so must follow DNS safe format
+
+step 7. Identify DNS-safe encoding
+	- no { } only _  means it is modified to be DNS-safe
+
+step 8.convert to CTF format
+	- FLAG_dns_exfiltration_
+	- FLAG{dns_exfiltration}
+
+
+challenge 3 : FLAG{tcp_stream_reassembly}
+
+step 1. filter tcp && tcp.port !=443
+	- follow tcp stream because tcp stream = already reassembled data. instead of looking packet by packet we get full combined flag.
+
+
+challenge 4 : FLAG{smtp_base64}
+
+The hint tells encoded = data is not in plain text  and some patterns in the body = focus on payload.
+following the hint emails often contain encoded message bodies, so filter smtp
+
+The packet echlo .thedoc contains suspicious string = RKxBR3tzbXRwX2Jhc2U2NH0=    decode this with base64 and get FLAG{smtp_base64}
+
+
+challenge 5 : Flag{ic_icmp}
+
+hint: pings = internet control message protocol  and do not looak at the summary-peek at the payload = look at packet bytes (payload data)
+
+filter icmp
+click a suspicious ICMP packet
+GO to packet Bytes pane
+switch to ASC|| view (bottom left)
+
+
+

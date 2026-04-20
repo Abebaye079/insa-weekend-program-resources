@@ -1,0 +1,21 @@
+1. file having permission -rwxr-xr-x    owner = read, write    group = read only  others = no access
+
+numeric value == 640
+
+2. script with permission 664   make execuateble for every one    read & write same  
+
+ new numeric code == 775
+
+3. owner & group can write  ,  readable by everyone    octalcode  662
+
+4. 110 100 000  == 640
+
+5. no because the owner has no read permission 
+
+6. chmod 750 audit.txt
+
+7. 741  == rwxr----x
+
+8. 500  == r-x------
+
+9. -r-xrw-r--  == 564 
